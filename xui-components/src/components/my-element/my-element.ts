@@ -1,6 +1,6 @@
 import { LitElement, css, html } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import litLogo from '../assets/lit.svg';
+import litLogo from '../../assets/lit.svg';
 import viteLogo from '/vite.svg';
 
 /**
@@ -118,10 +118,4 @@ export class MyElement extends LitElement {
       }
     }
   `;
-}
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'my-element': MyElement;
-  }
 }
