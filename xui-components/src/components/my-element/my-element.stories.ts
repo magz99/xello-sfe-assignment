@@ -4,7 +4,7 @@ import { MyElement } from './my-element';
 import './my-element';
 
 const meta: Meta<typeof MyElement> = {
-  title: 'Example/MyElement',
+  title: 'Components/MyElement',
   component: 'my-element',
   render: () => html`<my-element>
     <h1>Vite + Lit</h1>
@@ -15,4 +15,4 @@ export default meta;
 
 type Story = StoryObj<typeof MyElement>;
 
-export const Primary: Story = {};
+export const Default: Story = {};
