@@ -1,4 +1,4 @@
-import { html, LitElement, nothing } from 'lit';
+import { html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
 import './trigger-button/trigger-button.ts';
@@ -12,7 +12,7 @@ export class ReactionComponent extends LitElement {
       // Convert it to a value of type `type` and return it
       console.log('value and type: ', value, type);
       console.log('typeof value: ', typeof value);
-      return value === 'true';
+      return value === 'true'; // return Boolean(value)  does not work because it returns true for "false" string for some reason.
     },
   })
   isDisabled = 'false';

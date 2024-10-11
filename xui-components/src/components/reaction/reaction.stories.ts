@@ -7,7 +7,7 @@ const args = {
   isDisabled: false,
 };
 
-const meta: Meta<typeof ReactionComponent> = {
+const meta: Meta<typeof ReactionComponent & typeof args> = {
   title: 'Components/Reaction',
   component: 'xui-reaction',
   render: ({ isDisabled }: { isDisabled: boolean }) =>
@@ -17,9 +17,6 @@ const meta: Meta<typeof ReactionComponent> = {
     isDisabled: {
       options: [true, false],
       control: { type: 'radio' },
-    },
-    magzText: {
-      control: { type: 'text' },
     },
   },
 };
