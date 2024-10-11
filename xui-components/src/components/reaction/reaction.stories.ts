@@ -3,14 +3,29 @@ import { html } from 'lit';
 import { ReactionComponent } from './reaction';
 import './reaction';
 
+const args = {
+  isDisabled: false,
+};
+
 const meta: Meta<typeof ReactionComponent> = {
   title: 'Components/Reaction',
-  component: 'xui-reaction-',
-  render: () => html`<xui-reaction />`,
+  component: 'xui-reaction',
+  render: ({ isDisabled }: { isDisabled: boolean }) =>
+    html`<xui-reaction isDisabled=${isDisabled} />`,
+  args,
+  argTypes: {
+    isDisabled: {
+      options: [true, false],
+      control: { type: 'radio' },
+    },
+    magzText: {
+      control: { type: 'text' },
+    },
+  },
 };
 
 export default meta;
 
-type Story = StoryObj<typeof ReactionComponent>;
+type Story = StoryObj<typeof ReactionComponent & typeof args>;
 
 export const Default: Story = {};
