@@ -1,24 +1,21 @@
 import { css, html, LitElement } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
-import { sheetIcons } from './icons.ts';
+import { customElement, query } from 'lit/decorators.js';
+import { sheetIconMap } from './icons.ts';
 
 @customElement('xui-reaction-sheet')
 export class ReactionSheet extends LitElement {
-  // TODO: Some of the colours should be css vars for theming.
+  @query('button', true) _buttonEl!: HTMLButtonElement;
+
   static styles = css`
     #container {
-      display: none;
       border-radius: 4px;
       background-color: #ffffff;
       box-shadow: 0px 2px 4px 2px lightgrey;
       padding: 12px;
-
-      &.active {
       display: block;
       position: absolute;
       bottom: 111%;
     }
-    
     button {
       height: 24px;
       width: 24px;
@@ -32,8 +29,11 @@ export class ReactionSheet extends LitElement {
     button:hover {
       cursor: pointer;
       color: var(--xui-reaction-trigger-icon-hover-color, #027baf);
+      background-color: #d4eff9;
     }
-
+    svg {
+      pointer-events: none;
+    }
     #reaction-wrapper {
       display: grid;
       grid-template-columns: repeat(7, 1fr);
@@ -41,27 +41,33 @@ export class ReactionSheet extends LitElement {
     }
   `;
 
-  @property({
-    type: Boolean,
-    reflect: true,
-    converter: (value, type) => {
-      // `value` is a string
-      // Convert it to a value of type `type` and return it
-      console.log('sheet: value and type: ', value, type);
-      console.log('sheet typeof value: ', typeof value);
-      return value === 'true';
-    },
-  })
-  isOpen: boolean = false;
+  async firstUpdated() {
+    // Give the browser a chance to paint
+    await new Promise((r) => setTimeout(r, 0));
+    this._buttonEl.focus();
+  }
+
+  private _clickHandler(e: Event) {
+    const unicode = (e.target as Element).getAttribute('key')!;
+
+    const options = {
+      detail: { unicode },
+      bubbles: false,
+      composed: false, // whether the event will trigger listeners outside of a shadow root
+    };
+
+    this.dispatchEvent(new CustomEvent('reactionClick', options));
+  }
 
   render() {
-    return html`<div
-      id="container"
-      class=${this.isOpen ? 'active' : ''}
-      role="tooltip"
-    >
-      <div id="reaction-wrapper">
-        ${sheetIcons.map((i) => html`<button type="button">${i}</button>`)}
+    return html`<div id="container" role="tooltip">
+      <div id="reaction-wrapper" @click=${this._clickHandler}>
+        ${Object.values(sheetIconMap).map(
+          (i) =>
+            html`<button aria-label=${i.label} key=${i.unicode} type="button">
+              ${i.svg}
+            </button>`
+        )}
       </div>
     </div>`;
   }

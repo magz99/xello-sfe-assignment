@@ -4,7 +4,6 @@ import { triggerIcon } from './icons';
 
 @customElement('xui-reaction-trigger-button')
 export class ReactionTriggerButton extends LitElement {
-  // TODO: Some of the colours should be css vars for theming.
   static styles = css`
     :host {
       display: inline-block;
@@ -40,11 +39,7 @@ export class ReactionTriggerButton extends LitElement {
 
   @property({
     type: Boolean,
-    converter: (value, type) => {
-      // `value` is a string
-      // Convert it to a value of type `type` and return it
-      // console.log('button: value and type: ', value, type);
-      // console.log('button typeof value: ', typeof value);
+    converter: (value) => {
       return value === 'true';
     },
   })
@@ -53,7 +48,7 @@ export class ReactionTriggerButton extends LitElement {
   render() {
     return html`<button
       ?disabled=${this.isDisabled}
-      part="button"
+      type="button"
       aria-label=${this.ariaLabel}
     >
       ${triggerIcon}

@@ -3071,7 +3071,7 @@ const shockedIcon = html`<svg
   </defs>
 </svg> `;
 
-const distressedIcon = html`<svg
+const tiredIcon = html`<svg
   width="24"
   height="24"
   viewBox="0 0 24 24"
@@ -13157,59 +13157,59 @@ const notDoneIcon = html`<svg
   fill="none"
   xmlns="http://www.w3.org/2000/svg"
 >
-  <g clip-path="url(#clip0_6001_3150)">
-    <g filter="url(#filter0_iii_6001_3150)">
+  <g clip-path="url(#clip0_6001_3152)">
+    <g filter="url(#filter0_iii_6001_3152)">
       <rect
         x="1.40948"
-        y="1.73438"
+        y="1.54688"
         width="20.9062"
         height="20.9062"
         rx="0.576"
-        fill="url(#paint0_linear_6001_3150)"
+        fill="url(#paint0_linear_6001_3152)"
       />
       <rect
         x="1.40948"
-        y="1.73438"
+        y="1.54688"
         width="20.9062"
         height="20.9062"
         rx="0.576"
-        fill="url(#paint1_radial_6001_3150)"
+        fill="url(#paint1_radial_6001_3152)"
       />
     </g>
-    <g filter="url(#filter1_f_6001_3150)">
+    <g filter="url(#filter1_f_6001_3152)">
       <path
-        d="M21.0501 3.60938V20.7656"
-        stroke="url(#paint2_linear_6001_3150)"
+        d="M21.0501 3.42188V20.5781"
+        stroke="url(#paint2_linear_6001_3152)"
         stroke-width="0.24"
         stroke-linecap="round"
       />
     </g>
-    <g filter="url(#filter2_f_6001_3150)">
+    <g filter="url(#filter2_f_6001_3152)">
       <path
-        d="M4.00739 3.09375H20.3433"
-        stroke="url(#paint3_linear_6001_3150)"
+        d="M4.00739 3.42188H20.3433"
+        stroke="url(#paint3_linear_6001_3152)"
         stroke-width="0.24"
         stroke-linecap="round"
       />
     </g>
-    <g filter="url(#filter3_f_6001_3150)">
+    <g filter="url(#filter3_f_6001_3152)">
       <path
-        d="M10.1068 17.4375C9.81947 17.4375 9.53209 17.3299 9.31258 17.1144L5.00427 12.8833C4.56572 12.4527 4.56572 11.754 5.00427 11.3233C5.44282 10.8926 6.15425 10.8926 6.5928 11.3233L10.1068 14.7743L17.7579 7.26052C18.1965 6.82983 18.9079 6.82983 19.3464 7.26052C19.785 7.6912 19.785 8.38986 19.3464 8.82055L10.9011 17.1144C10.6821 17.3299 10.3942 17.4375 10.1068 17.4375Z"
+        d="M16.462 6.25775C16.7768 5.94289 17.2873 5.94289 17.6022 6.25775C17.917 6.57261 17.917 7.0831 17.6022 7.39796L13.0002 12L17.6022 16.6021C17.9171 16.917 17.9171 17.4275 17.6022 17.7423C17.2874 18.0572 16.7769 18.0572 16.462 17.7423L11.86 13.1402L7.25792 17.7423C6.94306 18.0572 6.43257 18.0572 6.11771 17.7423C5.80285 17.4275 5.80284 16.917 6.1177 16.6021L10.7198 12L6.11777 7.39796C5.80291 7.0831 5.80291 6.57261 6.11777 6.25775C6.43263 5.94289 6.94312 5.94289 7.25798 6.25775L11.86 10.8598L16.462 6.25775Z"
         fill="#53BB7D"
       />
     </g>
-    <g filter="url(#filter4_ii_6001_3150)">
+    <g filter="url(#filter4_ii_6001_3152)">
       <path
-        d="M10.1068 17.4375C9.81947 17.4375 9.53209 17.3299 9.31258 17.1144L5.00427 12.8833C4.56572 12.4527 4.56572 11.754 5.00427 11.3233C5.44282 10.8926 6.15425 10.8926 6.5928 11.3233L10.0956 14.7633C10.1019 14.7694 10.1118 14.7694 10.1181 14.7633L17.7579 7.26052C18.1965 6.82983 18.9079 6.82983 19.3464 7.26052C19.785 7.6912 19.785 8.38986 19.3464 8.82055L10.9011 17.1144C10.6821 17.3299 10.3942 17.4375 10.1068 17.4375Z"
+        d="M16.462 6.25775C16.7768 5.94289 17.2873 5.94289 17.6022 6.25775C17.917 6.57261 17.917 7.0831 17.6022 7.39796L13.0115 11.9887C13.0052 11.9949 13.0052 12.0051 13.0115 12.0113L17.6022 16.6021C17.9171 16.917 17.9171 17.4275 17.6022 17.7423C17.2874 18.0572 16.7769 18.0572 16.462 17.7423L11.8713 13.1515C11.865 13.1453 11.8549 13.1453 11.8487 13.1515L7.25792 17.7423C6.94306 18.0572 6.43257 18.0572 6.11771 17.7423C5.80285 17.4275 5.80284 16.917 6.1177 16.6021L10.7085 12.0113C10.7147 12.0051 10.7147 11.9949 10.7085 11.9887L6.11777 7.39796C5.80291 7.0831 5.80291 6.57261 6.11777 6.25775C6.43263 5.94289 6.94312 5.94289 7.25798 6.25775L11.8487 10.8485C11.8549 10.8547 11.865 10.8547 11.8713 10.8485L16.462 6.25775Z"
         fill="#FCF2FF"
       />
     </g>
   </g>
   <defs>
     <filter
-      id="filter0_iii_6001_3150"
+      id="filter0_iii_6001_3152"
       x="1.32948"
-      y="1.57438"
+      y="1.38688"
       width="21.3062"
       height="21.1462"
       filterUnits="userSpaceOnUse"
@@ -13238,7 +13238,7 @@ const notDoneIcon = html`<svg
       <feBlend
         mode="normal"
         in2="shape"
-        result="effect1_innerShadow_6001_3150"
+        result="effect1_innerShadow_6001_3152"
       />
       <feColorMatrix
         in="SourceAlpha"
@@ -13255,8 +13255,8 @@ const notDoneIcon = html`<svg
       />
       <feBlend
         mode="normal"
-        in2="effect1_innerShadow_6001_3150"
-        result="effect2_innerShadow_6001_3150"
+        in2="effect1_innerShadow_6001_3152"
+        result="effect2_innerShadow_6001_3152"
       />
       <feColorMatrix
         in="SourceAlpha"
@@ -13273,14 +13273,14 @@ const notDoneIcon = html`<svg
       />
       <feBlend
         mode="normal"
-        in2="effect2_innerShadow_6001_3150"
-        result="effect3_innerShadow_6001_3150"
+        in2="effect2_innerShadow_6001_3152"
+        result="effect3_innerShadow_6001_3152"
       />
     </filter>
     <filter
-      id="filter1_f_6001_3150"
+      id="filter1_f_6001_3152"
       x="20.6101"
-      y="3.16938"
+      y="2.98188"
       width="0.87999"
       height="18.0362"
       filterUnits="userSpaceOnUse"
@@ -13295,13 +13295,13 @@ const notDoneIcon = html`<svg
       />
       <feGaussianBlur
         stdDeviation="0.16"
-        result="effect1_foregroundBlur_6001_3150"
+        result="effect1_foregroundBlur_6001_3152"
       />
     </filter>
     <filter
-      id="filter2_f_6001_3150"
+      id="filter2_f_6001_3152"
       x="3.56739"
-      y="2.65375"
+      y="2.98188"
       width="17.2159"
       height="0.87999"
       filterUnits="userSpaceOnUse"
@@ -13316,15 +13316,15 @@ const notDoneIcon = html`<svg
       />
       <feGaussianBlur
         stdDeviation="0.16"
-        result="effect1_foregroundBlur_6001_3150"
+        result="effect1_foregroundBlur_6001_3152"
       />
     </filter>
     <filter
-      id="filter3_f_6001_3150"
-      x="4.51535"
-      y="6.7775"
-      width="15.32"
-      height="10.82"
+      id="filter3_f_6001_3152"
+      x="5.72156"
+      y="5.86161"
+      width="12.2768"
+      height="12.2769"
       filterUnits="userSpaceOnUse"
       color-interpolation-filters="sRGB"
     >
@@ -13337,15 +13337,15 @@ const notDoneIcon = html`<svg
       />
       <feGaussianBlur
         stdDeviation="0.08"
-        result="effect1_foregroundBlur_6001_3150"
+        result="effect1_foregroundBlur_6001_3152"
       />
     </filter>
     <filter
-      id="filter4_ii_6001_3150"
-      x="4.61135"
-      y="6.8735"
-      width="15.128"
-      height="10.628"
+      id="filter4_ii_6001_3152"
+      x="5.81756"
+      y="5.95761"
+      width="12.0848"
+      height="12.0849"
       filterUnits="userSpaceOnUse"
       color-interpolation-filters="sRGB"
     >
@@ -13372,7 +13372,7 @@ const notDoneIcon = html`<svg
       <feBlend
         mode="normal"
         in2="shape"
-        result="effect1_innerShadow_6001_3150"
+        result="effect1_innerShadow_6001_3152"
       />
       <feColorMatrix
         in="SourceAlpha"
@@ -13389,55 +13389,55 @@ const notDoneIcon = html`<svg
       />
       <feBlend
         mode="normal"
-        in2="effect1_innerShadow_6001_3150"
-        result="effect2_innerShadow_6001_3150"
+        in2="effect1_innerShadow_6001_3152"
+        result="effect2_innerShadow_6001_3152"
       />
     </filter>
     <linearGradient
-      id="paint0_linear_6001_3150"
+      id="paint0_linear_6001_3152"
       x1="11.8626"
-      y1="4.41526"
+      y1="4.22776"
       x2="11.8626"
-      y2="29.3548"
+      y2="29.1673"
       gradientUnits="userSpaceOnUse"
     >
       <stop stop-color="#5AD98F" />
       <stop offset="1" stop-color="#51C685" />
     </linearGradient>
     <radialGradient
-      id="paint1_radial_6001_3150"
+      id="paint1_radial_6001_3152"
       cx="0"
       cy="0"
       r="1"
       gradientUnits="userSpaceOnUse"
-      gradientTransform="translate(20.6517 3.30469) rotate(136.771) scale(1.60833 1.87849)"
+      gradientTransform="translate(20.6517 3.11719) rotate(136.771) scale(1.60833 1.87849)"
     >
       <stop stop-color="#80FFB3" />
       <stop offset="1" stop-color="#80FFB3" stop-opacity="0" />
     </radialGradient>
     <linearGradient
-      id="paint2_linear_6001_3150"
+      id="paint2_linear_6001_3152"
       x1="21.5501"
-      y1="3.60937"
+      y1="3.42187"
       x2="21.5501"
-      y2="20.7656"
+      y2="20.5781"
       gradientUnits="userSpaceOnUse"
     >
       <stop stop-color="#74FCA8" />
       <stop offset="1" stop-color="#61DB90" />
     </linearGradient>
     <linearGradient
-      id="paint3_linear_6001_3150"
+      id="paint3_linear_6001_3152"
       x1="21.2105"
-      y1="3.34377"
+      y1="3.6719"
       x2="2.06207"
-      y2="3.34377"
+      y2="3.6719"
       gradientUnits="userSpaceOnUse"
     >
       <stop stop-color="#66F39D" />
       <stop offset="1" stop-color="#60E496" />
     </linearGradient>
-    <clipPath id="clip0_6001_3150">
+    <clipPath id="clip0_6001_3152">
       <rect width="24" height="24" rx="1.28" fill="white" />
     </clipPath>
   </defs>
@@ -13603,7 +13603,7 @@ export const sheetIcons = [
   sadIcon,
   wowIcon,
   shockedIcon,
-  distressedIcon,
+  tiredIcon,
   pleadingIcon,
   thumbsUpIcon,
   thumbsDownIcon,
@@ -13624,3 +13624,186 @@ export const sheetIcons = [
   notDoneIcon,
   cautionIcon,
 ] as const;
+
+export const sheetIconMap = {
+  'U+1F600': {
+    svg: happyIcon,
+    unicode: 'U+1F600',
+    name: 'happy',
+    label: 'Happy grinning',
+  },
+  'U+1F60D': {
+    svg: heartEyesIcon,
+    unicode: 'U+1F60D',
+    name: 'heart',
+    label: 'Heart eyes',
+  },
+  'U+1F923': {
+    svg: joyIcon,
+    unicode: 'U+1F923',
+    name: 'joy',
+    label: 'Rolling on floor laughing',
+  },
+  'U+1F973': {
+    svg: celebrateIcon,
+    unicode: 'U+1F973',
+    name: 'celebrate',
+    label: 'Celebrate face',
+  },
+  'U+1F914': {
+    svg: thinkingIcon,
+    unicode: 'U+1F914',
+    name: 'thinking',
+    label: 'Thinking face',
+  },
+  'U+1F610': {
+    svg: indifferentIcon,
+    unicode: 'U+1F610',
+    name: 'neutral',
+    label: 'Neutral face',
+  },
+  'U+1F633': {
+    svg: embarrassedIcon,
+    unicode: 'U+1F633',
+    name: 'flushed',
+    label: 'Flushed face',
+  },
+  'U+2639': {
+    svg: sadIcon,
+    unicode: 'U+2639',
+    name: 'Sad',
+    label: 'Sad face',
+  },
+  'U+1F627': {
+    svg: wowIcon,
+    unicode: 'U+1F627',
+    name: 'anguished',
+    label: 'Wow face',
+  },
+  'U+1F628': {
+    svg: shockedIcon,
+    unicode: 'U+1F628',
+    name: 'shocked',
+    label: 'Shocked face',
+  },
+  'U+1F62B': {
+    svg: tiredIcon,
+    unicode: 'U+1F62B',
+    name: 'tired',
+    label: 'Tired face',
+  },
+  'U+1F979': {
+    svg: pleadingIcon,
+    unicode: 'U+1F979',
+    name: 'pleading',
+    label: 'Pleading face',
+  },
+  'U+1F44D': {
+    svg: thumbsUpIcon,
+    unicode: 'U+1F44D',
+    name: 'thumbsup',
+    label: 'Thumbs up',
+  },
+  'U+1F44E': {
+    svg: thumbsDownIcon,
+    unicode: 'U+1F44E',
+    name: 'thumbsdown',
+    label: 'Thumbs down',
+  },
+  'U+1F64F': {
+    svg: thankYouIcon,
+    unicode: 'U+1F64F',
+    name: 'thankyou',
+    label: 'Thank you',
+  },
+  'U+1F44B': {
+    svg: waveIcon,
+    unicode: 'U+1F44B',
+    name: 'wave',
+    label: 'Waving',
+  },
+  'U+1F64C': {
+    svg: raisedHandsIcon,
+    unicode: 'U+1F64C',
+    name: 'raisedhands',
+    label: 'Raised hands',
+  },
+  'U+1F4AA': {
+    svg: strongIcon,
+    unicode: 'U+1F4AA',
+    name: 'strong',
+    label: 'Strong',
+  },
+  'U+1F440': {
+    svg: eyesIcon,
+    unicode: 'U+1F440',
+    name: 'eyes',
+    label: 'Eyes',
+  },
+  'U+1F308': {
+    svg: rainbowIcon,
+    unicode: 'U+1F308',
+    name: 'rainbow',
+    label: 'Rainbow',
+  },
+  'U+1F340': {
+    svg: luckIcon,
+    unicode: 'U+1F340',
+    name: 'luck',
+    label: 'Luck',
+  },
+  'U+2764': {
+    svg: loveIcon,
+    unicode: 'U+2764',
+    name: 'love',
+    label: 'Love',
+  },
+  'U+2728': {
+    svg: sparklesIcon,
+    unicode: 'U+2728',
+    name: 'sparkles',
+    label: 'Sparkles',
+  },
+  'U+1F984': {
+    svg: unicornIcon,
+    unicode: 'U+1F984',
+    name: 'unicorn',
+    label: 'Unicorn',
+  },
+  'U+1F525': {
+    svg: fireIcon,
+    unicode: 'U+1F525',
+    name: 'fire',
+    label: 'Flame',
+  },
+  'U+1F4B5': {
+    svg: moneyIcon,
+    unicode: 'U+1F4B5',
+    name: 'money',
+    label: 'Money',
+  },
+  'U+1F4A1': {
+    svg: ideaIcon,
+    unicode: 'U+1F4A1',
+    name: 'idea',
+    label: 'Idea',
+  },
+  'U+2705': {
+    svg: doneIcon,
+    unicode: 'U+2705',
+    name: 'done',
+    label: 'Done',
+  },
+  'U+274E': {
+    svg: notDoneIcon,
+    unicode: 'U+274E',
+    name: 'notdone',
+    label: 'Not done',
+  },
+  'U+26A0': {
+    svg: cautionIcon,
+    unicode: 'U+26A0',
+    name: 'caution',
+    label: 'Caution',
+  },
+};
