@@ -12,14 +12,11 @@ export class ReactionTriggerButton extends LitElement {
     }
     button {
       height: 32px;
-      width: 40px;
+      width: auto;
       background-color: var(--xui-reaction-trigger-bg-color, #fafafa);
       border: 1px solid #cccccc;
       border-radius: 40px;
-      padding: 8px 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      padding: 0;
       font-size: 12px;
 
       color: var(--xui-reaction-trigger-icon-base-color, #484848);
@@ -50,10 +47,16 @@ export class ReactionTriggerButton extends LitElement {
       width: 100%;
       height: auto;
     }
+
+    #reaction-wrapper {
+      margin: 4px 9px;
+      display: flex;
+      align-items: center;
+    }
   `;
 
   @property({ type: String })
-  ariaLabel: string = 'Select a reaction';
+  name: string = 'Select a reaction';
 
   @property({ type: String })
   reactionIcon!: string;
@@ -61,21 +64,23 @@ export class ReactionTriggerButton extends LitElement {
   @property({ type: Number })
   count!: number;
 
-  @property({ type: Number })
-  userClicked = true;
+  @property({ type: Boolean })
+  reacted = false;
 
   render() {
-    const classes = { clicked: this.userClicked };
+    const classes = { clicked: this.reacted };
 
     return html`<button
       type="button"
       class=${classMap(classes)}
-      aria-label=${this.ariaLabel}
+      aria-label=${this.name}
     >
+    <span id="reaction-wrapper">
       <span id="icon-wrapper"
-        >${sheetIconMap[this.reactionIcon as keyof typeof sheetIconMap]
-          .svg}</span
-      ><span>${this.count}</span>
+        >${
+          sheetIconMap[this.reactionIcon as keyof typeof sheetIconMap].svg
+        }</span
+      ><span>${this.count}</span><span>
     </button>`;
   }
 }

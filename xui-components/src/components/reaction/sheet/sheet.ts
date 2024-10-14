@@ -48,15 +48,17 @@ export class ReactionSheet extends LitElement {
   }
 
   private _clickHandler(e: Event) {
-    const unicode = (e.target as Element).getAttribute('key')!;
+    const unicode = (e.target as Element).getAttribute('key');
 
-    const options = {
-      detail: { unicode },
-      bubbles: false,
-      composed: false, // whether the event will trigger listeners outside of a shadow root
-    };
+    if (unicode) {
+      const options = {
+        detail: { unicode },
+        bubbles: false,
+        composed: false, // whether the event will trigger listeners outside of a shadow root
+      };
 
-    this.dispatchEvent(new CustomEvent('reactionClick', options));
+      this.dispatchEvent(new CustomEvent('reactionClick', options));
+    }
   }
 
   render() {

@@ -1,11 +1,11 @@
-import { css, html, LitElement } from 'lit';
+import { css, html, LitElement, TemplateResult } from 'lit';
 import { customElement, property, state } from 'lit/decorators.js';
 
 import './trigger-button/trigger-button.ts';
 import './sheet/sheet.ts';
 import './list-button/list-button.ts';
 
-import { sheetIcons } from './sheet/icons.ts';
+import { sheetIconMap } from './sheet/icons.ts';
 
 @customElement('xui-reaction')
 export class ReactionComponent extends LitElement {
@@ -17,12 +17,12 @@ export class ReactionComponent extends LitElement {
     }
 
     #reactions-container {
-      display: flex;
-    }
-
-    #reactions-list {
-      display: flex;
-      margin-left: 4px;
+      display: grid;
+      grid-template-columns: 40px repeat(
+          var(--xui-reaction-list-column-size, 14),
+          1fr
+        );
+      gap: 4px;
     }
   `;
 
@@ -30,13 +30,12 @@ export class ReactionComponent extends LitElement {
   private _isOpen = false;
 
   @property()
-  private _reactionsList = [
-    {
-      unicode: 'U+1F600',
-      name: 'happy',
-      label: 'Happy grinning',
-    },
-  ];
+  private _reactionsList: {
+    svg: TemplateResult<1>;
+    unicode: string;
+    name: string;
+    label: string;
+  }[] = [];
 
   @property({
     type: Boolean,
@@ -50,9 +49,14 @@ export class ReactionComponent extends LitElement {
     this._isOpen = !this._isOpen;
   }
 
-  private _reactionHandler(e: CustomEvent) {
+  private _reactionHandler(e: CustomEvent<{ unicode: string }>) {
     console.log('reaction is: ', e);
     this._toggleOpen();
+
+    const unicodeValue = String(e.detail.unicode) as keyof typeof sheetIconMap;
+    this._reactionsList.push(sheetIconMap[unicodeValue]);
+
+    console.log('reactionsList: ', this._reactionsList);
   }
 
   render() {
@@ -67,15 +71,15 @@ export class ReactionComponent extends LitElement {
           @click="${this._toggleOpen}"
           isDisabled=${this.isDisabled}
         ></xui-reaction-trigger-button>
-        <div id="reactions-list">
-          ${this._reactionsList.map(
-            (reactionItem) =>
-              html`<xui-reaction-list-button
-                reactionIcon=${reactionItem.unicode}
-                count="1"
-              ></xui-reaction-list-button>`
-          )}
-        </div>
+
+        ${this._reactionsList.map(
+          (reactionItem) =>
+            html`<xui-reaction-list-button
+              reactionIcon=${reactionItem.unicode}
+              count="1"
+              reacted="true"
+            ></xui-reaction-list-button>`
+        )}
       </div>
     </div>`;
   }
