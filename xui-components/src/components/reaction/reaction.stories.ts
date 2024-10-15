@@ -19,6 +19,9 @@ const meta: Meta<typeof ReactionComponent & typeof args> = {
       control: { type: 'radio' },
     },
   },
+  parameters: {
+    layout: 'centered',
+  },
 };
 
 export default meta;
