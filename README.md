@@ -4,8 +4,8 @@
 
 There are two folders in this repository:
 
-- xui-components which contains the reusable Lit components
-- xello-angular-app which contains the sample Angular application that integrates the ui components
+- xui-components which contains the reusable Lit component
+- xello-dashboard which contains the sample Angular application that integrates the ui component
 
 ## Custom Reaction Component
 
