@@ -7,7 +7,7 @@ import './list-button/list-button.ts';
 
 import { sheetIconMap } from './sheet/icons.ts';
 
-interface ReactionData {
+export interface ReactionData {
   unicode: string;
   name: string;
   label: string;
@@ -41,33 +41,11 @@ export class ReactionComponent extends LitElement {
   private _isOpen = false;
 
   @state()
-  private _reactionsMap: Record<string, ReactionData> = {
-    'U+1F923': {
-      count: 2,
-      unicode: 'U+1F923',
-      name: 'joy',
-      label: 'Rolling on floor laughing',
-      reacted: false,
-    },
-    'U+1F973': {
-      count: 1,
-      unicode: 'U+1F973',
-      name: 'celebrate',
-      label: 'Celebrate face',
-      reacted: true,
-    },
-    'U+1F914': {
-      count: 10,
-      unicode: 'U+1F914',
-      name: 'thinking',
-      label: 'Thinking face',
-      reacted: true,
-    },
-  };
+  private _reactionsMap: Record<string, ReactionData> = {};
 
-  @property()
+  @property({ type: Object })
   set reactionsMap(val: Record<string, ReactionData>) {
-    this._reactionsMap = val;
+    this._reactionsMap = { ...val };
   }
 
   get reactionsMap() {
@@ -150,6 +128,7 @@ export class ReactionComponent extends LitElement {
     return html`<div>
       ${this._isOpen
         ? html`<xui-reaction-sheet
+            id="reaction-sheet"
             @sheetReactionClick=${this._reactionHandler}
           ></xui-reaction-sheet>`
         : ''}
