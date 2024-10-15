@@ -5,22 +5,42 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + Lit + TS</title>
-    <link rel="stylesheet" href="./src/index.css" />
-    <script
-      type="module"
-      src="/src/components/my-element/my-element.ts"
-    ></script>
     <script type="module" src="/src/components/reaction/reaction.ts"></script>
   </head>
   <body>
-    <my-element>
-      <h1>Vite + Lit</h1>
-    </my-element>
+    <main class="main">
+      <div class="content">
+        <h1>Lit custom reaction element:</h1>
+        <div class="articles">
+          <article>
+            <h2>My First Post</h2>
+            <p>
+              Lorem ipsum odor amet, consectetuer adipiscing elit. Morbi
+              dignissim ex eros lectus penatibus neque? Felis nascetur habitant
+              viverra fringilla aenean pharetra. Et rutrum mus id penatibus mus
+              platea dui fusce. Nisl a nullam bibendum velit morbi; consectetur
+              accumsan sodales. Vivamus est risus cras velit consectetur nullam.
+              Gravida ornare laoreet nascetur maximus proin est. Orci faucibus
+              varius velit habitasse viverra volutpat est hac. Penatibus vivamus
+              facilisis vestibulum per porttitor.
+            </p>
 
-    <section>
-      <p>Reaction Component</p>
-
-      <xui-reaction></xui-reaction>
-    </section>
+            <p>
+              Lacinia lacinia semper senectus efficitur lobortis ut. Imperdiet
+              varius hac praesent habitasse interdum auctor; a sed. Auctor est
+              mi mattis suspendisse aliquet non placerat molestie. Sem tortor
+              interdum hac semper lorem inceptos ullamcorper. Nec nullam
+              dignissim lorem sem ultrices himenaeos volutpat? Netus per
+              consequat turpis volutpat elementum elit mauris amet. Vitae auctor
+              massa class blandit libero venenatis condimentum.
+            </p>
+            <div class="reaction-container">
+              <xui-reaction></xui-reaction>
+            </div>
+          </article>
+        </div>
+      </div>
+    </main>
+    <router-outlet />
   </body>
 </html>
