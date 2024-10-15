@@ -35,7 +35,7 @@ export class ReactionTriggerButton extends LitElement {
   `;
 
   @property({ type: String })
-  ariaLabel: string = 'Select a reaction';
+  name: string = 'Select a reaction';
 
   @property({
     type: Boolean,
@@ -49,7 +49,7 @@ export class ReactionTriggerButton extends LitElement {
     return html`<button
       ?disabled=${this.isDisabled}
       type="button"
-      aria-label=${this.ariaLabel}
+      aria-label=${this.name}
     >
       ${triggerIcon}
     </button>`;
