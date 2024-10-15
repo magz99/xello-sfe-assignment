@@ -28,6 +28,11 @@ There is a `reaction` component located in the `xui-components/src/components/re
 2. run `npm run build-storybook` first
 3. run `npm run storybook` to launch the tool
 
+### Building for Angular
+
+The Angular `xello-dashboard` app already has a copy of the xui-components.js module in its `src/assets` folder.
+But the `npm run build-angular` script can be run, which will copy the output into src/assets.
+
 ## Angular Integration
 
 ### Setup
