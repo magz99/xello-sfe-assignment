@@ -9,8 +9,15 @@
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "test": "web-test-runner"
+    "test": "web-test-runner",
+    "build-angular": "tsc && vite build && copy-files-from-to"
   },
+  "copyFiles": [
+    {
+      "from": "dist/xui-components.js",
+      "to": "../xello-dashboard/src/assets/xui-components.js"
+    }
+  ],
   "dependencies": {
     "@types/jasmine": "^5.1.4",
     "lit": "^3.2.0"
@@ -29,6 +36,7 @@
     "@storybook/web-components": "^8.3.5",
     "@storybook/web-components-vite": "^8.3.5",
     "@web/test-runner": "^0.19.0",
+    "copy-files-from-to": "^3.11.0",
     "custom-elements-manifest": "^2.1.0",
     "storybook": "^8.3.5",
     "typescript": "^5.5.3",
