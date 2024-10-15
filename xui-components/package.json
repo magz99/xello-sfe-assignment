@@ -18,6 +18,9 @@
       "to": "../xello-dashboard/src/assets/xui-components.js"
     }
   ],
+  "copyFilesSettings": {
+        "whenFileExists": "overwrite"
+  },
   "dependencies": {
     "@types/jasmine": "^5.1.4",
     "lit": "^3.2.0"
