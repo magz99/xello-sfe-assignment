@@ -88,7 +88,7 @@ export class ReactionTriggerButton extends LitElement {
   render() {
     const classes = { reacted: this.reacted };
 
-    return html`<button
+    return html`<button title=${this.name}
       type="button"
       class=${classMap(classes)}
       aria-label=${this.name}
