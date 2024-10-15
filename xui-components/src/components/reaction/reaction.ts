@@ -22,14 +22,12 @@ export class ReactionComponent extends LitElement {
       position: relative;
       display: inline-block;
       box-sizing: border-box;
+      width: 100%;
     }
 
     #reactions-container {
-      display: grid;
-      grid-template-columns: var(--xui-reaction-trigger-button-width, 40px) repeat(
-          var(--xui-reaction-max-columns, 13),
-          minmax(var(--xui-reaction-list-button-max-width, 47px), auto)
-        );
+      display: flex;
+      flex-wrap: wrap;
       gap: 4px;
     }
   `;
@@ -60,6 +58,15 @@ export class ReactionComponent extends LitElement {
   })
   isDisabled = 'false';
 
+  connectedCallback() {
+    super.connectedCallback();
+    window.addEventListener('keyup', this._handleKeyup);
+  }
+  disconnectedCallback() {
+    window.removeEventListener('keyup', this._handleKeyup);
+    super.disconnectedCallback();
+  }
+
   private _toggleOpen() {
     this._isOpen = !this._isOpen;
   }
@@ -72,14 +79,27 @@ export class ReactionComponent extends LitElement {
     }
   }
 
+  private _toggleAndFocus() {
+    this._toggleOpen();
+    this._handleFocus();
+  }
+
+  private _handleKeyup = (e: Event) => {
+    const code = (e as KeyboardEvent).key;
+    if (code === 'Escape') {
+      if (this._isOpen) {
+        this._toggleAndFocus();
+      }
+    }
+  };
+
   private _reactionHandler(
     e: CustomEvent<{ unicode: string; source: string }>
   ) {
     const { unicode, source } = e.detail;
 
     if (source === 'sheet') {
-      this._toggleOpen();
-      this._handleFocus();
+      this._toggleAndFocus();
     }
 
     this._updateReactionsMap(unicode);

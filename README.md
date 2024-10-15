@@ -16,6 +16,9 @@ There is a `reaction` component located in the `xui-components/src/components/re
 1. Cd into the `xui-components` folder
 2. run `npm i` to install the packages and dependencies
 3. run `npm run dev` and open the url indicated in the console output
+4. You should see something like this:
+
+![Lit and Vite dev](vite-lit-serve.png)
 
 ### Running Tests
 
