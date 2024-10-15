@@ -167,6 +167,7 @@ export class ReactionComponent extends LitElement {
               count=${reactionItem.count}
               reacted=${reactionItem.reacted}
               unicode=${reactionItem.unicode}
+              name=${reactionItem.label}
             ></xui-reaction-list-button>`
         )}
       </div>
