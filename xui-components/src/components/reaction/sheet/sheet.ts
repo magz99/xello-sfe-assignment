@@ -1,10 +1,14 @@
 import { css, html, LitElement } from 'lit';
-import { customElement, query } from 'lit/decorators.js';
+import { customElement, query, state } from 'lit/decorators.js';
 import { sheetIconMap } from './icons.ts';
+import { classMap } from 'lit/directives/class-map.js';
 
 @customElement('xui-reaction-sheet')
 export class ReactionSheet extends LitElement {
   @query('button', true) _buttonEl!: HTMLButtonElement;
+
+  @state()
+  private _position = 'top';
 
   static styles = css`
     #container {
@@ -14,7 +18,12 @@ export class ReactionSheet extends LitElement {
       padding: 12px;
       display: block;
       position: absolute;
+    }
+    #container.show-top {
       bottom: 111%;
+    }
+    #container.show-bottom {
+      top: 111%;
     }
     button {
       height: 24px;
@@ -47,6 +56,20 @@ export class ReactionSheet extends LitElement {
     this._buttonEl.focus();
   }
 
+  connectedCallback() {
+    super.connectedCallback();
+
+    this._setSheetPosition();
+  }
+
+  private _setSheetPosition() {
+    const parentRect = this.parentElement?.getBoundingClientRect();
+
+    if ((parentRect?.top ?? 0) < 192) {
+      this._position = 'bottom';
+    }
+  }
+
   private _clickHandler(e: Event) {
     const unicode = (e.target as Element).getAttribute('key');
 
@@ -62,7 +85,12 @@ export class ReactionSheet extends LitElement {
   }
 
   render() {
-    return html`<div id="container" role="tooltip">
+    const classes = {
+      'show-top': this._position === 'top',
+      'show-bottom': this._position === 'bottom',
+    };
+
+    return html`<div class=${classMap(classes)} id="container" role="tooltip">
       <div id="reaction-wrapper" @click=${this._clickHandler}>
         ${Object.values(sheetIconMap).map(
           (i) =>
