@@ -52,12 +52,12 @@ export class ReactionSheet extends LitElement {
 
     if (unicode) {
       const options = {
-        detail: { unicode },
+        detail: { unicode, source: 'sheet' },
         bubbles: false,
         composed: false, // whether the event will trigger listeners outside of a shadow root
       };
 
-      this.dispatchEvent(new CustomEvent('reactionClick', options));
+      this.dispatchEvent(new CustomEvent('sheetReactionClick', options));
     }
   }
 

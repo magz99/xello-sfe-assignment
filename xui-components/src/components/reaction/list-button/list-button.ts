@@ -32,8 +32,8 @@ export class ReactionTriggerButton extends LitElement {
       color: var(--xui-reaction-trigger-disabled, #828282);
     }
 
-    button.clicked {
-      backgrounc-color: var(--xui-reaction-trigger-clicked-bg-color, #e9f7fc);
+    button.reacted {
+      background-color: var(--xui-reaction-trigger-clicked-bg-color, #e9f7fc);
       border-color: var(--xui-reaction-trigger-clicked-border-color, #027baf);
     }
 
@@ -59,21 +59,40 @@ export class ReactionTriggerButton extends LitElement {
   name: string = 'Select a reaction';
 
   @property({ type: String })
+  unicode!: string;
+
+  @property({ type: String })
   reactionIcon!: string;
 
   @property({ type: Number })
   count!: number;
 
-  @property({ type: Boolean })
+  @property({
+    type: Boolean,
+    converter: (value) => {
+      return value === 'true';
+    },
+  })
   reacted = false;
 
+  private _clickHandler() {
+    const options = {
+      detail: { unicode: this.unicode, source: 'list' },
+      bubbles: true,
+      composed: false, // whether the event will trigger listeners outside of a shadow root
+    };
+
+    this.dispatchEvent(new CustomEvent('listReactionClick', options));
+  }
+
   render() {
-    const classes = { clicked: this.reacted };
+    const classes = { reacted: this.reacted };
 
     return html`<button
       type="button"
       class=${classMap(classes)}
       aria-label=${this.name}
+      @click=${this._clickHandler}
     >
     <span id="reaction-wrapper">
       <span id="icon-wrapper"
