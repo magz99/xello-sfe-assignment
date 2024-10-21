@@ -1,4 +1,4 @@
-import { css, html, LitElement } from 'lit';
+import { css, html, LitElement, nothing } from 'lit';
 import { customElement, property, query, state } from 'lit/decorators.js';
 
 import './trigger-button/trigger-button.ts';
@@ -52,11 +52,8 @@ export class ReactionComponent extends LitElement {
 
   @property({
     type: Boolean,
-    converter: (value) => {
-      return value === 'true'; // return Boolean(value) does not work in Storybook because it returns true for "false" string for some reason.
-    },
   })
-  isDisabled = 'false';
+  isDisabled = false;
 
   connectedCallback() {
     super.connectedCallback();
@@ -156,7 +153,7 @@ export class ReactionComponent extends LitElement {
         <xui-reaction-trigger-button
           id="trigger-button"
           @click="${this._toggleOpen}"
-          isDisabled=${this.isDisabled}
+          isDisabled=${this.isDisabled || nothing}
         ></xui-reaction-trigger-button>
 
         ${Object.values(this.reactionsMap).map(
@@ -164,7 +161,7 @@ export class ReactionComponent extends LitElement {
             html`<xui-reaction-list-button
               reactionIcon=${reactionItem.unicode}
               count=${reactionItem.count}
-              reacted=${reactionItem.reacted}
+              reacted=${reactionItem.reacted || nothing}
               unicode=${reactionItem.unicode}
               name=${reactionItem.label}
             ></xui-reaction-list-button>`

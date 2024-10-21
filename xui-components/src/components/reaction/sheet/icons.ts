@@ -13592,39 +13592,6 @@ const cautionIcon = html`<svg
   </defs>
 </svg> `;
 
-export const sheetIcons = [
-  happyIcon,
-  heartEyesIcon,
-  joyIcon,
-  celebrateIcon,
-  thinkingIcon,
-  indifferentIcon,
-  embarrassedIcon,
-  sadIcon,
-  wowIcon,
-  shockedIcon,
-  tiredIcon,
-  pleadingIcon,
-  thumbsUpIcon,
-  thumbsDownIcon,
-  thankYouIcon,
-  waveIcon,
-  raisedHandsIcon,
-  strongIcon,
-  eyesIcon,
-  rainbowIcon,
-  luckIcon,
-  loveIcon,
-  sparklesIcon,
-  unicornIcon,
-  fireIcon,
-  moneyIcon,
-  ideaIcon,
-  doneIcon,
-  notDoneIcon,
-  cautionIcon,
-] as const;
-
 export const sheetIconMap = {
   'U+1F600': {
     svg: happyIcon,
