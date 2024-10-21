@@ -1,0 +1,5 @@
+@media (max-width: 300px) {
+    xui-reaction xui-reaction-list-button:not(.show-mobile) {
+      display: none;
+    }
+}
