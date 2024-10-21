@@ -281,7 +281,7 @@ O.elementStyles = [], O.shadowRootOptions = { mode: "open" }, O[D("elementProper
  */
 const L = globalThis, R = L.trustedTypes, n1 = R ? R.createPolicy("lit-html", { createHTML: (i) => i }) : void 0, h1 = "$lit$", g = `lit$${Math.random().toFixed(9).slice(2)}$`, g1 = "?" + g, D1 = `<${g1}>`, B = document, Z = () => B.createComment(""), E = (i) => i === null || typeof i != "object" && typeof i != "function", X = Array.isArray, L1 = (i) => X(i) || typeof (i == null ? void 0 : i[Symbol.iterator]) == "function", W = `[ 	
 \f\r]`, v = /<(?:(!--|\/[^a-zA-Z])|(\/?[a-zA-Z][^>\s]*)|(\/?$))/g, p1 = /-->/g, d1 = />/g, U = RegExp(`>|${W}(?:([^\\s"'>=/]+)(${W}*=${W}*(?:[^ 	
-\f\r"'\`<>=]|("|')|))|$)`, "g"), c1 = /'/g, f1 = /"/g, y1 = /^(?:script|style|textarea|title)$/i, Z1 = (i) => (t, ...a) => ({ _$litType$: i, strings: t, values: a }), n = Z1(1), S = Symbol.for("lit-noChange"), f = Symbol.for("lit-nothing"), _1 = /* @__PURE__ */ new WeakMap(), m = B.createTreeWalker(B, 129);
+\f\r"'\`<>=]|("|')|))|$)`, "g"), c1 = /'/g, f1 = /"/g, y1 = /^(?:script|style|textarea|title)$/i, Z1 = (i) => (t, ...a) => ({ _$litType$: i, strings: t, values: a }), n = Z1(1), S = Symbol.for("lit-noChange"), c = Symbol.for("lit-nothing"), _1 = /* @__PURE__ */ new WeakMap(), m = B.createTreeWalker(B, 129);
 function x1(i, t) {
   if (!X(i) || !i.hasOwnProperty("raw")) throw Error("invalid template strings array");
   return n1 !== void 0 ? n1.createHTML(t) : t;
@@ -291,10 +291,10 @@ const E1 = (i, t) => {
   let e, o = t === 2 ? "<svg>" : t === 3 ? "<math>" : "", l = v;
   for (let p = 0; p < a; p++) {
     const s = i[p];
-    let c, _, d = -1, u = 0;
-    for (; u < s.length && (l.lastIndex = u, _ = l.exec(s), _ !== null); ) u = l.lastIndex, l === v ? _[1] === "!--" ? l = p1 : _[1] !== void 0 ? l = d1 : _[2] !== void 0 ? (y1.test(_[2]) && (e = RegExp("</" + _[2], "g")), l = U) : _[3] !== void 0 && (l = U) : l === U ? _[0] === ">" ? (l = e ?? v, d = -1) : _[1] === void 0 ? d = -2 : (d = l.lastIndex - _[2].length, c = _[1], l = _[3] === void 0 ? U : _[3] === '"' ? f1 : c1) : l === f1 || l === c1 ? l = U : l === p1 || l === d1 ? l = v : (l = U, e = void 0);
+    let f, _, d = -1, u = 0;
+    for (; u < s.length && (l.lastIndex = u, _ = l.exec(s), _ !== null); ) u = l.lastIndex, l === v ? _[1] === "!--" ? l = p1 : _[1] !== void 0 ? l = d1 : _[2] !== void 0 ? (y1.test(_[2]) && (e = RegExp("</" + _[2], "g")), l = U) : _[3] !== void 0 && (l = U) : l === U ? _[0] === ">" ? (l = e ?? v, d = -1) : _[1] === void 0 ? d = -2 : (d = l.lastIndex - _[2].length, f = _[1], l = _[3] === void 0 ? U : _[3] === '"' ? f1 : c1) : l === f1 || l === c1 ? l = U : l === p1 || l === d1 ? l = v : (l = U, e = void 0);
     const h = l === U && i[p + 1].startsWith("/>") ? " " : "";
-    o += l === v ? s + D1 : d >= 0 ? (r.push(c), s.slice(0, d) + h1 + s.slice(d) + g + h) : s + g + (d === -2 ? p : h);
+    o += l === v ? s + D1 : d >= 0 ? (r.push(f), s.slice(0, d) + h1 + s.slice(d) + g + h) : s + g + (d === -2 ? p : h);
   }
   return [x1(i, o + (i[a] || "<?>") + (t === 2 ? "</svg>" : t === 3 ? "</math>" : "")), r];
 };
@@ -303,8 +303,8 @@ class T {
     let e;
     this.parts = [];
     let o = 0, l = 0;
-    const p = t.length - 1, s = this.parts, [c, _] = E1(t, a);
-    if (this.el = T.createElement(c, r), m.currentNode = this.el.content, a === 2 || a === 3) {
+    const p = t.length - 1, s = this.parts, [f, _] = E1(t, a);
+    if (this.el = T.createElement(f, r), m.currentNode = this.el.content, a === 2 || a === 3) {
       const d = this.el.content.firstChild;
       d.replaceWith(...d.childNodes);
     }
@@ -358,8 +358,8 @@ class T1 {
     let o = m.nextNode(), l = 0, p = 0, s = r[0];
     for (; s !== void 0; ) {
       if (l === s.index) {
-        let c;
-        s.type === 2 ? c = new $(o, o.nextSibling, this, t) : s.type === 1 ? c = new s.ctor(o, s.name, s.strings, this, t) : s.type === 6 && (c = new b1(o, this, t)), this._$AV.push(c), s = r[++p];
+        let f;
+        s.type === 2 ? f = new $(o, o.nextSibling, this, t) : s.type === 1 ? f = new s.ctor(o, s.name, s.strings, this, t) : s.type === 6 && (f = new b1(o, this, t)), this._$AV.push(f), s = r[++p];
       }
       l !== (s == null ? void 0 : s.index) && (o = m.nextNode(), l++);
     }
@@ -376,7 +376,7 @@ class $ {
     return ((t = this._$AM) == null ? void 0 : t._$AU) ?? this._$Cv;
   }
   constructor(t, a, r, e) {
-    this.type = 2, this._$AH = f, this._$AN = void 0, this._$AA = t, this._$AB = a, this._$AM = r, this.options = e, this._$Cv = (e == null ? void 0 : e.isConnected) ?? !0;
+    this.type = 2, this._$AH = c, this._$AN = void 0, this._$AA = t, this._$AB = a, this._$AM = r, this.options = e, this._$Cv = (e == null ? void 0 : e.isConnected) ?? !0;
   }
   get parentNode() {
     let t = this._$AA.parentNode;
@@ -390,7 +390,7 @@ class $ {
     return this._$AB;
   }
   _$AI(t, a = this) {
-    t = A(this, t, a), E(t) ? t === f || t == null || t === "" ? (this._$AH !== f && this._$AR(), this._$AH = f) : t !== this._$AH && t !== S && this._(t) : t._$litType$ !== void 0 ? this.$(t) : t.nodeType !== void 0 ? this.T(t) : L1(t) ? this.k(t) : this._(t);
+    t = A(this, t, a), E(t) ? t === c || t == null || t === "" ? (this._$AH !== c && this._$AR(), this._$AH = c) : t !== this._$AH && t !== S && this._(t) : t._$litType$ !== void 0 ? this.$(t) : t.nodeType !== void 0 ? this.T(t) : L1(t) ? this.k(t) : this._(t);
   }
   O(t) {
     return this._$AA.parentNode.insertBefore(t, this._$AB);
@@ -399,7 +399,7 @@ class $ {
     this._$AH !== t && (this._$AR(), this._$AH = this.O(t));
   }
   _(t) {
-    this._$AH !== f && E(this._$AH) ? this._$AA.nextSibling.data = t : this.T(B.createTextNode(t)), this._$AH = t;
+    this._$AH !== c && E(this._$AH) ? this._$AA.nextSibling.data = t : this.T(B.createTextNode(t)), this._$AH = t;
   }
   $(t) {
     var o;
@@ -441,7 +441,7 @@ class N {
     return this._$AM._$AU;
   }
   constructor(t, a, r, e, o) {
-    this.type = 1, this._$AH = f, this._$AN = void 0, this.element = t, this.name = a, this._$AM = e, this.options = o, r.length > 2 || r[0] !== "" || r[1] !== "" ? (this._$AH = Array(r.length - 1).fill(new String()), this.strings = r) : this._$AH = f;
+    this.type = 1, this._$AH = c, this._$AN = void 0, this.element = t, this.name = a, this._$AM = e, this.options = o, r.length > 2 || r[0] !== "" || r[1] !== "" ? (this._$AH = Array(r.length - 1).fill(new String()), this.strings = r) : this._$AH = c;
   }
   _$AI(t, a = this, r, e) {
     const o = this.strings;
@@ -449,13 +449,13 @@ class N {
     if (o === void 0) t = A(this, t, a, 0), l = !E(t) || t !== this._$AH && t !== S, l && (this._$AH = t);
     else {
       const p = t;
-      let s, c;
-      for (t = o[0], s = 0; s < o.length - 1; s++) c = A(this, p[r + s], a, s), c === S && (c = this._$AH[s]), l || (l = !E(c) || c !== this._$AH[s]), c === f ? t = f : t !== f && (t += (c ?? "") + o[s + 1]), this._$AH[s] = c;
+      let s, f;
+      for (t = o[0], s = 0; s < o.length - 1; s++) f = A(this, p[r + s], a, s), f === S && (f = this._$AH[s]), l || (l = !E(f) || f !== this._$AH[s]), f === c ? t = c : t !== c && (t += (f ?? "") + o[s + 1]), this._$AH[s] = f;
     }
     l && !e && this.j(t);
   }
   j(t) {
-    t === f ? this.element.removeAttribute(this.name) : this.element.setAttribute(this.name, t ?? "");
+    t === c ? this.element.removeAttribute(this.name) : this.element.setAttribute(this.name, t ?? "");
   }
 }
 class k1 extends N {
@@ -463,7 +463,7 @@ class k1 extends N {
     super(...arguments), this.type = 3;
   }
   j(t) {
-    this.element[this.name] = t === f ? void 0 : t;
+    this.element[this.name] = t === c ? void 0 : t;
   }
 }
 class I1 extends N {
@@ -471,7 +471,7 @@ class I1 extends N {
     super(...arguments), this.type = 4;
   }
   j(t) {
-    this.element.toggleAttribute(this.name, !!t && t !== f);
+    this.element.toggleAttribute(this.name, !!t && t !== c);
   }
 }
 class $1 extends N {
@@ -479,8 +479,8 @@ class $1 extends N {
     super(t, a, r, e, o), this.type = 5;
   }
   _$AI(t, a = this) {
-    if ((t = A(this, t, a, 0) ?? f) === S) return;
-    const r = this._$AH, e = t === f && r !== f || t.capture !== r.capture || t.once !== r.once || t.passive !== r.passive, o = t !== f && (r === f || e);
+    if ((t = A(this, t, a, 0) ?? c) === S) return;
+    const r = this._$AH, e = t === c && r !== c || t.capture !== r.capture || t.once !== r.once || t.passive !== r.passive, o = t !== c && (r === c || e);
     e && this.element.removeEventListener(this.name, this, r), o && this.element.addEventListener(this.name, this, t), this._$AH = t;
   }
   handleEvent(t) {
@@ -617,8 +617,8 @@ function F1(i, t) {
         const s = Symbol();
         return { get() {
           return this[s];
-        }, set(c) {
-          this[s] = c;
+        }, set(f) {
+          this[s] = f;
         } };
       })();
       return V1(a, r, { get() {
@@ -676,7 +676,7 @@ let k = class extends x {
   }
   render() {
     return n`<button
-      ?disabled=${this.isDisabled}
+      disabled=${this.isDisabled || c}
       type="button"
       aria-label=${this.name}
     >
@@ -718,8 +718,7 @@ a1([
 ], k.prototype, "name", 2);
 a1([
   C({
-    type: Boolean,
-    converter: (i) => i === "true"
+    type: Boolean
   })
 ], k.prototype, "isDisabled", 2);
 k = a1([
@@ -14682,8 +14681,7 @@ w([
 ], F.prototype, "count", 2);
 w([
   C({
-    type: Boolean,
-    converter: (i) => i === "true"
+    type: Boolean
   })
 ], F.prototype, "reacted", 2);
 F = w([
@@ -14696,7 +14694,7 @@ var v2 = Object.defineProperty, D2 = Object.getOwnPropertyDescriptor, M = (i, t,
 };
 let G = class extends x {
   constructor() {
-    super(...arguments), this._isOpen = !1, this._reactionsMap = {}, this.isDisabled = "false", this._handleKeyup = (i) => {
+    super(...arguments), this._isOpen = !1, this._reactionsMap = {}, this.isDisabled = !1, this._handleKeyup = (i) => {
       i.key === "Escape" && this._isOpen && this._toggleAndFocus();
     };
   }
@@ -14762,14 +14760,14 @@ let G = class extends x {
         <xui-reaction-trigger-button
           id="trigger-button"
           @click="${this._toggleOpen}"
-          isDisabled=${this.isDisabled}
+          isDisabled=${this.isDisabled || c}
         ></xui-reaction-trigger-button>
 
         ${Object.values(this.reactionsMap).map(
       (i) => n`<xui-reaction-list-button
               reactionIcon=${i.unicode}
               count=${i.count}
-              reacted=${i.reacted}
+              reacted=${i.reacted || c}
               unicode=${i.unicode}
               name=${i.label}
             ></xui-reaction-list-button>`
@@ -14806,8 +14804,7 @@ M([
 ], G.prototype, "reactionsMap", 1);
 M([
   C({
-    type: Boolean,
-    converter: (i) => i === "true"
+    type: Boolean
   })
 ], G.prototype, "isDisabled", 2);
 G = M([

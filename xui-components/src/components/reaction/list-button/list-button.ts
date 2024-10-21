@@ -1,4 +1,4 @@
-import { css, html, LitElement, nothing } from 'lit';
+import { css, html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { sheetIconMap } from '../sheet/icons.ts';
 import { classMap } from 'lit/directives/class-map.js';
