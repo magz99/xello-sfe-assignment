@@ -1,4 +1,4 @@
-import { css, html, LitElement } from 'lit';
+import { css, html, LitElement, nothing } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { triggerIcon } from './icons';
 
@@ -39,15 +39,12 @@ export class ReactionTriggerButton extends LitElement {
 
   @property({
     type: Boolean,
-    converter: (value) => {
-      return value === 'true';
-    },
   })
-  isDisabled: boolean = false;
+  isDisabled = false;
 
   render() {
     return html`<button
-      ?disabled=${this.isDisabled}
+      disabled=${this.isDisabled || nothing}
       type="button"
       aria-label=${this.name}
     >
